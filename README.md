@@ -17,7 +17,7 @@ Browse, download, install, and enable/disable [Nexus Mods](https://www.nexusmods
 
 ## Supported games
 
-Thirteen games, each one installed, modded and played on real hardware before
+Fourteen games, each one installed, modded and played on real hardware before
 it shipped. That is what supported means here: not that the code has a config
 entry for it, but that someone finished a session with mods running.
 
@@ -26,14 +26,15 @@ entry for it, but that someone finished a session with mods running.
 3. Fallout 4
 4. Fallout: New Vegas
 5. Helldivers 2
-6. Mount & Blade II: Bannerlord
-7. Palworld
-8. Resident Evil 4
-9. Skyrim Special Edition
-10. Slay the Spire 2
-11. STAR WARS Battlefront II (2017)
-12. Stardew Valley
-13. The Witcher 3
+6. Middle-earth: Shadow of Mordor
+7. Mount & Blade II: Bannerlord
+8. Palworld
+9. Resident Evil 4
+10. Skyrim Special Edition
+11. Slay the Spire 2
+12. STAR WARS Battlefront II (2017)
+13. Stardew Valley
+14. The Witcher 3
 
 ### On the roadmap
 
@@ -42,7 +43,6 @@ plugin; treat anything you do with them as untested.
 
 - Fallout 3
 - Hollow Knight: Silksong
-- Middle-earth: Shadow of Mordor
 - Middle-earth: Shadow of War
 
 ### Requested, not started
