@@ -5955,6 +5955,14 @@ CP77_CET_DIR = "bin/x64/plugins/cyber_engine_tweaks/mods"
 CP77_CET_ENTRY = "init.lua"
 
 
+# The names ReShade ships its injector under. A package with one of these
+# IS ReShade; a package without one is a preset for somebody else's.
+RESHADE_INJECTOR_DLLS = (
+    "dxgi.dll", "d3d11.dll", "d3d10.dll", "d3d9.dll", "d3d12.dll",
+    "opengl32.dll", "dinput8.dll",
+)
+
+
 async def _install_reshade_package(
     scratch: str,
     archive_path: str,
@@ -6024,16 +6032,33 @@ async def _install_reshade_package(
         },
     )
     _save_settings(settings)
+    # Did this package bring the injector, or only a preset?
+    #
+    # It decides whether launch options are touched at all. A preset is
+    # some .ini and .fx files for a ReShade that is ALREADY there, and
+    # setting an override for an injector the package does not contain
+    # switches on a dll that does not exist while switching off whatever
+    # the player had wired up. That is not a hypothetical: a preset-only
+    # package took a hand-installed ReShade off a device this way.
+    injector = any(
+        os.path.basename(r).lower() in RESHADE_INJECTOR_DLLS
+        for r in moved_rel
+    )
     decky.logger.info(
         f"installed ReShade package {mod_name!r}: "
         f"{len(moved_rel)} file(s) -> {reshade_subdir}"
+        f" ({'with' if injector else 'no'} injector)"
     )
     await _emit_progress(mod_id, "done", 100)
-    warning = (
-        "ReShade injects a DLL into the game's own process. Launch "
-        "options have been set so the injector loads under Proton."
-    )
-    if anti_cheat:
+    if not injector:
+        warning = (
+            "This is a ReShade preset, not ReShade itself - it needs a "
+            "ReShade already installed for this game to have any effect. "
+            "Launch options were left alone, because switching on an "
+            "injector this package does not contain would only switch off "
+            "whatever you already had."
+        )
+    elif anti_cheat:
         warning = (
             "ReShade injects a DLL into the game's own process. This game "
             "runs anti-cheat, and while asset-swap mods are known to be "
@@ -6041,10 +6066,16 @@ async def _install_reshade_package(
             "own risk. Launch options have been set so the injector loads "
             "under Proton."
         )
+    else:
+        warning = (
+            "ReShade injects a DLL into the game's own process. Launch "
+            "options have been set so the injector loads under Proton."
+        )
     return {
         "ok": True,
         "folder": record_key,
         "reshade": True,
+        "injector": injector,
         "warning": warning,
     }
 
