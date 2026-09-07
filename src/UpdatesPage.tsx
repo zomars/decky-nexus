@@ -55,7 +55,8 @@ export function UpdatesPage() {
         u.game.modsSubdir,
         u.game.appId,
         u.game.launcherXmlSubpath ?? "",
-        u.game.processName ?? ""
+        u.game.processName ?? "",
+        fw.backupFiles ?? []
       );
       if (result.ok) {
         setPending((prev) => prev?.filter((p) => p !== u));

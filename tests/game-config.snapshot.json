@@ -93,6 +93,32 @@
     "cleanupPrefixes": []
   },
   {
+    "appId": "356190",
+    "displayName": "Shadow of War",
+    "nexusDomain": "middleearthshadowofwar",
+    "installDirName": "ShadowOfWar",
+    "modsSubdir": "x64/plugins",
+    "pluginsTxtSubpath": null,
+    "pluginsTxtStyle": null,
+    "installMode": null,
+    "frameworkName": "Shadow of War DLL Loader",
+    "launchOptionsTemplate": "dxgi=n,bThis is a support plugin for the desktop app Mod Organizer 2, not a mod for the game. There is nothing in it to install here.This is a trainer - a separate Windows program you run alongside the game. It cannot be installed as a mod, and there is no way to run it from Gaming Mode.starredlistedfolderstarred",
+    "prefixTools": [
+      "99",
+      "49"
+    ],
+    "manualTools": 0,
+    "hasLauncherBypass": false,
+    "hasSetupInis": false,
+    "hasLogAdapter": false,
+    "hasOwnLauncher": false,
+    "longWaitAtMods": null,
+    "cleanupPrefixes": [
+      "\"x64/ShadowOfWarDllLoader.dll\", \"x64/plugins\"",
+      "\"x64/plugins/ShadowOfWarPacketLoader.dll\", \"x64/plugins/PacketLoader\","
+    ]
+  },
+  {
     "appId": "377160",
     "displayName": "Fallout 4",
     "nexusDomain": "fallout4",
