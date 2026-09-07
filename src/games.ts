@@ -287,6 +287,17 @@ export interface SupportedGame {
   /** Shown as a banner at the top of the QAM panel: support for this game
    * is real but rough. Honest signposting beats silent rough edges. */
   underConstruction?: string;
+  /** A mod loader for this game opens a console window.
+   *
+   * Harmless on Windows, where it sits behind the game on a desktop. Under
+   * gamescope it is a second window and the compositor presents THAT, so
+   * the game appears not to launch while running perfectly behind it.
+   * Shadow of War's Packet Loader does this, and its own `log = 0` does
+   * not turn it off - measured, not assumed.
+   *
+   * titlePrefix is matched against window titles; the window is unmapped,
+   * never closed, because it belongs to the game's process. */
+  loaderConsole?: { titlePrefix: string; name: string };
   /** ReShade support: where the game's exe lives (injector files land
    * there), and the launch options Proton needs to load a native dxgi. */
   reshade?: { subdir: string; launchOptionsTemplate: string };
@@ -1261,6 +1272,9 @@ export const SUPPORTED_GAMES: Record<number, SupportedGame> = {
       // from the backup rather than deleting it.
       cleanupPrefixes: ["x64/ShadowOfWarDllLoader.dll", "x64/plugins"],
     },
+    // The Packet Loader's console. Confirmed on device: unmapping it
+    // reveals the game, which was running the whole time.
+    loaderConsole: { titlePrefix: "SoWPL", name: "Packet Loader console" },
     extraFrameworks: [
       {
         // The asset-swap half. Its own page: "Get the Shadow of War Dll
