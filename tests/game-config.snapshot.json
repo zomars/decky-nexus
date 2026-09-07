@@ -47,6 +47,26 @@
     ]
   },
   {
+    "appId": "241930",
+    "displayName": "Shadow of Mordor",
+    "nexusDomain": "middleearthshadowofmordor",
+    "installDirName": "ShadowOfMordor",
+    "modsSubdir": "x64/plugins",
+    "pluginsTxtSubpath": null,
+    "pluginsTxtStyle": null,
+    "installMode": null,
+    "frameworkName": null,
+    "launchOptionsTemplate": "d3d11=n,bThis mod patches one of the game's own archives by running a Windows batch file (xdelta), which rewrites UI_GFX.arch05 in place. This plugin does not run installers that rewrite shipped archives - its page describes doing it by hand in Desktop Mode.This is a Cheat Engine table: a script for a separate Windows program that attaches to the running game. There is nothing to install, and no way to run Cheat Engine from Gaming Mode.This is a trainer - a separate Windows program you run alongside the game. It cannot be installed as a mod, and there is no way to run one from Gaming Mode.",
+    "prefixTools": [],
+    "manualTools": 0,
+    "hasLauncherBypass": false,
+    "hasSetupInis": false,
+    "hasLogAdapter": false,
+    "hasOwnLauncher": false,
+    "longWaitAtMods": null,
+    "cleanupPrefixes": []
+  },
+  {
     "appId": "261550",
     "displayName": "Mount & Blade II: Bannerlord",
     "nexusDomain": "mountandblade2bannerlord",
@@ -102,7 +122,7 @@
     "pluginsTxtStyle": null,
     "installMode": null,
     "frameworkName": "Shadow of War DLL Loader",
-    "launchOptionsTemplate": "dxgi=n,bThis is a support plugin for the desktop app Mod Organizer 2, not a mod for the game. There is nothing in it to install here.This is a trainer - a separate Windows program you run alongside the game. It cannot be installed as a mod, and there is no way to run it from Gaming Mode.starredlistedfolderstarred",
+    "launchOptionsTemplate": "dxgi=n,bThis is a support plugin for the desktop app Mod Organizer 2, not a mod for the game. There is nothing in it to install here.This is a trainer - a separate Windows program you run alongside the game. It cannot be installed as a mod, and there is no way to run it from Gaming Mode.",
     "prefixTools": [
       "99",
       "49"

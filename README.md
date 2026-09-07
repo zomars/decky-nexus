@@ -42,6 +42,7 @@ plugin; treat anything you do with them as untested.
 
 - Fallout 3
 - Hollow Knight: Silksong
+- Middle-earth: Shadow of Mordor
 - Middle-earth: Shadow of War
 
 ### Requested, not started
